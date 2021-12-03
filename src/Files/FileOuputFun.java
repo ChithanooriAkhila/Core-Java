@@ -4,7 +4,7 @@ import java.io.PrintWriter;
 public class FileOuputFun {
     public static void main(String[] args) {
         try{
-           PrintWriter pw=new PrintWriter("C:\\Users\\cakhi\\IdeaProjects\\Java\\Core Java\\src\\Files\\output.txt");
+           PrintWriter pw=new PrintWriter("output.txt");
            pw.println("hello there!!!");
            pw.println("My name is akhila chithanoori");
            pw.append("pursuing b.tech in computer science");

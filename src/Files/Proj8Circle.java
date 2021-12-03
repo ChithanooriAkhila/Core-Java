@@ -11,8 +11,8 @@ public class Proj8Circle {
         Scanner circleFile;
         ArrayList<Circle> CircleRef = new ArrayList<>();
         try {
-            circleFile = new Scanner(new File("C:\\Users\\cakhi\\IdeaProjects\\Java\\Core Java\\src\\Files\\circle_data.txt"));
-            PrintWriter pw=new PrintWriter("C:\\Users\\cakhi\\IdeaProjects\\Java\\Core Java\\src\\Files\\circles_output.txt");
+            circleFile = new Scanner(new File("src/Files/circle_data.txt"));
+            PrintWriter pw=new PrintWriter("src/Files/circles_output.txt");
             while (circleFile.hasNext()) {
                 double radius = circleFile.nextDouble();
                 Circle circle = new Circle(radius);
@@ -21,11 +21,12 @@ public class Proj8Circle {
             circleFile.close();
             for (Circle circle : CircleRef) {
                 printDetailsToConsole(circle);
-                pw.append("radius = " + circle.getRadius());
-                pw.append("Area = " + circle.area());
-                pw.append("Circumference = " + circle.circumference());
-                pw.append("=========\n");
+                pw.println("radius = " + circle.getRadius());
+                pw.println("Area = " + circle.area());
+                pw.println("Circumference = " + circle.circumference());
+                pw.println("=========\n");
             }
+            pw.close();
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
         }
